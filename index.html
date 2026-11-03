@@ -1,0 +1,54 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Giấy Ô Li Nằm Ngang</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Import font chữ Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Tạo đường lưới ô li tập học sinh bằng SVG Pattern background */
+        .paper-grid {
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(to right, rgba(14, 165, 233, 0.15) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.15) 1px, transparent 1px),
+                linear-gradient(to right, rgba(14, 165, 233, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.3) 1px, transparent 1px);
+            background-size: 8px 8px, 8px 8px, 32px 32px, 32px 32px;
+        }
+    </style>
+</head>
+<body class="paper-grid min-h-screen flex items-center justify-center p-4 sm:p-8 select-none">
+
+    <!-- Thẻ mô phỏng tờ giấy tập khổ nằm ngang (tỷ lệ 4:3 / landscape) -->
+    <main class="relative bg-white/90 border border-blue-200 rounded-xl shadow-2xl p-6 sm:p-10 w-full max-w-5xl aspect-[4/3] max-h-[90vh] flex items-center justify-center backdrop-blur-sm overflow-hidden">
+        
+        <!-- Đường lề đỏ ngang ở phía trên trang giấy nằm ngang -->
+        <div class="absolute left-0 right-0 top-8 sm:top-12 h-0.5 bg-red-400 opacity-60 pointer-events-none"></div>
+
+        <!-- Ô hình vuông to tỷ lệ 1:1, viền màu xanh lá cây bo góc -->
+        <div class="relative z-10 h-full max-h-[75%] aspect-square border-4 border-emerald-500 rounded-2xl p-4 sm:p-6 bg-white/80 shadow-md flex flex-col focus-within:border-emerald-600 focus-within:ring-4 focus-within:ring-emerald-500/20 transition-all duration-200">
+            
+            <!-- Khu vực nhập chữ phủ kín toàn bộ ô vuông -->
+            <textarea 
+                class="w-full h-full bg-transparent resize-none border-none outline-none text-gray-800 text-base sm:text-lg leading-relaxed placeholder-gray-400 font-normal"
+                placeholder="Nhập chữ vào đây..."
+                autofocus
+                spellcheck="false"
+            ></textarea>
+            
+        </div>
+
+    </main>
+
+</body>
+</html>
+```
